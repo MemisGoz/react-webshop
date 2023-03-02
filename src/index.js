@@ -8,6 +8,7 @@ import 'flowbite';
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
   </React.StrictMode>,
   document.getElementById('root')
 );
