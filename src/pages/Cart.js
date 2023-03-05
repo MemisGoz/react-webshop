@@ -1,8 +1,59 @@
 import React from 'react'
+import { addCart, deleteCart } from '../redux/action'
+import { useSelector, useDispatch } from 'react-redux'
 
 function Cart() {
+
+  const state = useSelector((state) => state.handleCart);
+  const dispatch = useDispatch();
+
+  const handleAdd = (item) => {
+    dispatch(addCart(item));
+  };
+  const handleDelete = (item) => {
+    dispatch(deleteCart(item));
+  };
+
+  const getCartTotal = () => {
+    let total = 0;
+    for (let idx = 0; idx < state.length; idx++){
+      total += state[idx].qty * state[idx].price
+    }
+    return total;
+  }
+
+  const emptyCart = () => {
+    return (
+      <div>
+        
+        <h2>Empty Cart</h2>
+        
+      </div>
+    )
+  }
+
+  const cartItems = (product) => {
+    return (
+      <div>
+        
+        
+        <h2>{product.name}</h2>
+        <p>{product.qty * product.price}</p>
+
+        
+
+      </div>
+    )
+  }
+
+
+
   return (
-    <div>Cart</div>
+    <div>
+      {state.length === 0 && emptyCart()}
+      {state.length !== 0 && state.map(cartItems)}
+      <h1>{ getCartTotal() }.- DKK</h1>
+    </div>
   )
 }
 

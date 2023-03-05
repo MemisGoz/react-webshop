@@ -4,11 +4,13 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'flowbite';
-
+import { Provider } from 'react-redux';
+import store from './redux/store';
 ReactDOM.render(
   <React.StrictMode>
+    <Provider store={store}>
     <App />
-    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Hero from './Components/Hero';
 import Burgers from './Components/Burgers';
 import Cart from './pages/Cart';
+
 function App() {
   return (
   <div className='px-8'>
