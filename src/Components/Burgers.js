@@ -11,6 +11,7 @@ function Burgers() {
 
 
   const [burgers, setBurgers] = useState([]);
+  
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(8);
 
