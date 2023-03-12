@@ -5,10 +5,5 @@ export const addCart = (product) => {
     }
 }
 
-export const deleteCart = (product) => {
-    return {
-        type: "DELETEITEM",
-        payload: product,
-    }
-}
+
 
